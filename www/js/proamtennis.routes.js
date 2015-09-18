@@ -26,12 +26,12 @@
 
       // Each tab has its own nav history stack:
 
-      .state('tab.dash', {
-        url: '/dash',
+      .state('tab.tournaments', {
+        url: '/tournaments',
         views: {
-          'tab-dash': {
-            templateUrl: 'templates/tab-dash.html',
-            controller: 'DashController'
+          'tab-tournaments': {
+            templateUrl: 'templates/tab-tournaments.html',
+            controller: 'TournamentsController'
           }
         }
       })
