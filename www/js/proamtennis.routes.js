@@ -11,6 +11,21 @@
       // Each state's controller can be found in controllers.js
       $stateProvider
 
+      .state('app', {
+        url: "/app",
+        abstract: true,
+        templateUrl: "templates/menu.html"
+      })
+
+      .state('app.search', {
+        url: "/search",
+        views: {
+          'menuContent' :{
+            templateUrl: "templates/search.html"
+          }
+        }
+      })
+
       .state('login', {
           url: '/login',
           templateUrl: 'templates/login.html',

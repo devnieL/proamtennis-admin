@@ -6,7 +6,7 @@
 angular
 .module('proamtennis.controllers')
 .controller('LoginController', function ($scope, LoginService, $ionicPopup, $state) {
-  
+
   $scope.data = {};
 
   $scope.login = function() {
