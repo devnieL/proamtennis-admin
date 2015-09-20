@@ -26,6 +26,16 @@
         }
       })
 
+      .state('app.players', {
+        url: "/players",
+        views: {
+          'menuContent' :{
+            templateUrl: "templates/players.html",
+            controller: 'PlayersController'
+          }
+        }
+      })
+
       .state('login', {
           url: '/login',
           templateUrl: 'templates/login.html',
