@@ -1,14 +1,15 @@
-<ion-view view-title="Bienvenido" name="login-view">
-  <ion-content class="padding">
-    <div class="list list-inset">
-      <h1><center>Ingrese su Código de Autorización</center></h1>
-      <label class="item item-input">
-        <input type="text" placeholder="Código de Autorización" ng-model="data.code">
-      </label>
-      <!-- <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label> -->
+<ion-view view-title="Bienvenido" name="login-view" hide-nav-bar="true" class='view-login'>
+  <ion-content class="center">
+
+    <div class="row">
+      <div class="col">
+        <div class='login-wrapper'>
+          <h3 class='title'>ProAmTennis Perú 2015</h3>
+          <input class="input" type="text" placeholder="Código de Autorización" ng-model="data.code">
+          <button class="button button-block button-calm button-blue" ng-click="login()">Login</button>
+        </div>
+      </div>
     </div>
-    <button class="button button-block button-calm" ng-click="login()">Login</button>
+
   </ion-content>
 </ion-view>

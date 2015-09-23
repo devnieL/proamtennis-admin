@@ -1,0 +1,27 @@
+/** FORMS **/
+
+.input {
+	padding: 20px 25px !important;
+	border-radius: 3px;
+	box-shadow: inset 0px 2px 3px rgba(0,0,0,0.05), 
+				inset 0px 2px 3px rgba(0,0,0,0.05), 
+				inset 0px 2px 3px rgba(0,0,0,0.05), 
+				inset 0px 2px 3px rgba(0,0,0,0.05);
+	font-family: 'Montserrat';
+	text-align: center;
+}
+
+.button-blue {
+	background-color: #103C5D !important;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+
+    &:active {
+    	background-color: #002642 !important;
+    }
+}

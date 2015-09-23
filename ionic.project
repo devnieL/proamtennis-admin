@@ -1,4 +1,12 @@
 {
   "name": "ProAmAdmin",
-  "app_id": "6b7aab53"
+  "app_id": "6b7aab53",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
