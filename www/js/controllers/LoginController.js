@@ -10,7 +10,7 @@ angular
   $scope.data = {};
 
   $scope.login = function() {
-      LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
+      LoginService.loginUser($scope.data.code).success(function(data) {
           $state.go('tab.tournaments');
       }).error(function(data) {
           var alertPopup = $ionicPopup.alert({

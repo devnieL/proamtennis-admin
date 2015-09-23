@@ -7,11 +7,11 @@ angular
   .module('proamtennis.services', [])
   .service('LoginService', function($q) {
     return {
-      loginUser: function(name, pw) {
+      loginUser: function(code) {
         var deferred = $q.defer();
         var promise = deferred.promise;
 
-        if (name == 'user' && pw == 'secret') {
+        if (code == '1111') {
           deferred.resolve('Welcome ' + name + '!');
         } else {
           deferred.reject('Wrong credentials.');

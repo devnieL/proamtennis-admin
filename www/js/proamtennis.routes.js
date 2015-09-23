@@ -17,11 +17,11 @@
         templateUrl: "templates/menu.html"
       })
 
-      .state('app.search', {
-        url: "/search",
+      .state('app.info', {
+        url: "/info",
         views: {
           'menuContent' :{
-            templateUrl: "templates/search.html"
+            templateUrl: "templates/info.html"
           }
         }
       })
