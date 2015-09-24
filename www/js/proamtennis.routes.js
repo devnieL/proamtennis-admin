@@ -11,30 +11,9 @@
       // Each state's controller can be found in controllers.js
       $stateProvider
 
-      .state('app', {
-        url: "/app",
-        abstract: true,
-        templateUrl: "templates/menu.html"
-      })
-
-      .state('app.info', {
-        url: "/info",
-        views: {
-          'menuContent' :{
-            templateUrl: "templates/info.html"
-          }
-        }
-      })
-
-      .state('app.players', {
-        url: "/players",
-        views: {
-          'menuContent' :{
-            templateUrl: "templates/players.html",
-            controller: 'PlayersController'
-          }
-        }
-      })
+      // =============================================
+      // APP
+      // =============================================
 
       .state('login', {
           url: '/login',
@@ -42,7 +21,29 @@
           controller: 'LoginController'
       })
 
-      // setup an abstract state for the tabs directive
+      .state('tournament', {
+        url: "/tournaments/:tournamentId",
+        abstract: true,
+        templateUrl: "templates/tournament-menu.html"
+      })
+
+      
+
+      .state('tournament.detail', {
+        url: "",
+        views: {
+          'content' :{
+            templateUrl: "templates/tournament.html",
+            controller: 'TournamentController'
+          }
+        }
+      })
+
+      
+      // =============================================
+      // TABS
+      // =============================================
+
       .state('tab', {
         url: '/tab',
         abstract: true,
@@ -57,6 +58,16 @@
           'tab-tournaments': {
             templateUrl: 'templates/tab-tournaments.html',
             controller: 'TournamentsController'
+          }
+        }
+      })
+
+      .state('tournaments.tournament', {
+        url: "/:tournamentId",
+        views: {
+          'content' :{
+            templateUrl: "templates/tournament.html",
+            controller: 'TournamentController'
           }
         }
       })
