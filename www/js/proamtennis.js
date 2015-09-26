@@ -14,6 +14,7 @@
     'proamtennis.controllers'
   ]);
 
+  angular.module('proamtennis.services', []);
   angular.module('proamtennis.controllers', ['proamtennis.services', 'proamtennis.factories']);
 
   angular
@@ -42,4 +43,3 @@
       }
     });
   }
-

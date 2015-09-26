@@ -1,26 +1,20 @@
 <ion-view view-title="Dashboard">
+  <ion-header-bar class="bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
+    </label>
+    <button class="button button-clear">
+      Cancel
+    </button>
+  </ion-header-bar>
   <ion-content class="tournaments-list">
-
     <div class="list">
-
-        <a class="item item-thumbnail-left tournaments-detail" href="#/tournaments/1">
-          <img ng-src="img/tennis.png">
-          <h2>ProAmTennis 2015</h2> 
-          <p>Nuevo</p>
+        <a class="item item-thumbnail-left tournaments-detail" ng-repeat="tt in data.tennis_tournaments"  href="#/tournaments/{{tt.id}}">
+          <img ng-src="{{tt.image}}">
+          <h2>{{tt.name}}</h2>
+          <p>{{tt.status}}</p>
         </a>
-
-        <a class="item item-thumbnail-left tournaments-detail" href="#/tournaments/2">
-          <img ng-src="img/tennis.png">
-          <h2>Smarter Games</h2>
-          <p>Nuevo</p>
-        </a>
-
-        <a class="item item-thumbnail-left tournaments-detail" href="#/tournaments/3">
-          <img ng-src="img/tennis.png">
-          <h2>ProAmTennis 2016</h2>
-          <p>Nuevo</p>
-        </a>
-
     </div>
 
   </ion-content>

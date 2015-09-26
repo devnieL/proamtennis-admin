@@ -4,7 +4,7 @@
 */
 
 angular
-  .module('proamtennis.services', [])
+  .module('proamtennis.services')
   .service('LoginService', function($q) {
     return {
       loginUser: function(code) {
