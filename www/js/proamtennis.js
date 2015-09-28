@@ -10,24 +10,25 @@
   angular
   .module('proamtennis', [
     'ionic',
+    'proamtennis.utils',
+    'proamtennis.constants',
     'proamtennis.routes',
     'proamtennis.controllers'
   ]);
 
+  angular.module('proamtennis.utils', []);
+  angular.module('proamtennis.constants', []);
   angular.module('proamtennis.services', []);
-  angular.module('proamtennis.controllers', ['proamtennis.services', 'proamtennis.factories']);
+  angular.module('proamtennis.controllers', ['proamtennis.services', 'proamtennis.utils', 'proamtennis.factories']);
+  angular.module('proamtennis.routes', ['proamtennis.utils', 'proamtennis.services']);
 
   angular
   .module('proamtennis')
   .run(run);
 
-  run.$inject = ['$ionicPlatform'];
+  run.$inject = ['$ionicPlatform', '$rootScope', '$state', 'AuthService', 'APP_EVENTS'];
 
-  /**
-  * @name run
-  * @desc Update xsrf $http headers to align with Django's defaults
-  */
-  function run($ionicPlatform) {
+  function run($ionicPlatform, $rootScope, $state, AuthService, APP_EVENTS) {
 
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -41,5 +42,20 @@
         // org.apache.cordova.statusbar required
         StatusBar.styleLightContent();
       }
+    });
+
+    // Review : http://devdactic.com/user-auth-angularjs-ionic/
+
+    $rootScope.$on('$stateChangeStart', function(event, next, nextParams, fromState){
+
+      console.log('stateChangeStart', AuthService.isAuthenticated());
+
+      if(!AuthService.isAuthenticated()){
+        if(next.name !== 'login'){
+          event.preventDefault();
+          $state.go("login");
+        };
+      };
+
     });
   }

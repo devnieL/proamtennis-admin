@@ -38,7 +38,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .login-wrapper {
-    
+
     .title {
         color: #FFF;
         font-size: 13px;
@@ -49,7 +49,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
         margin-bottom: 20px;
     }
 
-    .input { text-align: center }
+		.login-form {
+			.input + .input {
+				margin-top: 10px;
+			}
+		}
 }
 
 .center{

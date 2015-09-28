@@ -7755,8 +7755,8 @@ a.button {
   font-size: 16px;
   text-align: center;
   margin-bottom: 20px; }
-.login-wrapper .input {
-  text-align: center; }
+.login-wrapper .login-form .input + .input {
+  margin-top: 10px; }
 
 .center {
   display: -webkit-box;
@@ -7802,8 +7802,7 @@ a.button {
   padding: 20px 25px !important;
   border-radius: 3px;
   box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.05), inset 0px 2px 3px rgba(0, 0, 0, 0.05), inset 0px 2px 3px rgba(0, 0, 0, 0.05), inset 0px 2px 3px rgba(0, 0, 0, 0.05);
-  font-family: 'Montserrat';
-  text-align: center; }
+  font-family: 'Montserrat'; }
 
 .button-blue {
   background-color: #103C5D !important;

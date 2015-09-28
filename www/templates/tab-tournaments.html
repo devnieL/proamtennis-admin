@@ -2,7 +2,7 @@
   <ion-header-bar class="bar-subheader item-input-inset">
     <label class="item-input-wrapper">
       <i class="icon ion-ios-search placeholder-icon"></i>
-      <input type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
+      <input type="search" placeholder="Search" ng-change="search()" ng-model="searchQuery">
     </label>
     <button class="button button-clear">
       Cancel
@@ -10,10 +10,10 @@
   </ion-header-bar>
   <ion-content class="tournaments-list">
     <div class="list">
-        <a class="item item-thumbnail-left tournaments-detail" ng-repeat="tt in data.tennis_tournaments"  href="#/tournaments/{{tt.id}}">
-          <img ng-src="{{tt.image}}">
-          <h2>{{tt.name}}</h2>
-          <p>{{tt.status}}</p>
+        <a class="item item-thumbnail-left tournaments-detail" ng-repeat="tournament in tournaments"  href="#/tournaments/{{tt.id}}">
+          <img ng-src="{{tournament.image}}">
+          <h2>{{tournament.name}}</h2>
+          <p>{{tournament.status}}</p>
         </a>
     </div>
 

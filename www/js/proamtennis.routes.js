@@ -1,9 +1,17 @@
   angular
-  .module('proamtennis.routes', [])
+  .module('proamtennis.routes')
   .config([
     '$stateProvider',
     '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+    '$httpProvider',
+    function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+      // @devniel
+      // Intercepting $http request to add token authorization header
+      // based on :
+      // https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/
+
+      $httpProvider.interceptors.push('AuthInterceptor');
 
       // Ionic uses AngularUI Router which uses the concept of states
       // Learn more here: https://github.com/angular-ui/ui-router
@@ -27,8 +35,6 @@
         templateUrl: "templates/tournament-menu.html"
       })
 
-      
-
       .state('tournament.detail', {
         url: "",
         views: {
@@ -39,7 +45,6 @@
         }
       })
 
-      
       // =============================================
       // TABS
       // =============================================
@@ -101,8 +106,9 @@
         }
       });
 
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/login');
-      // $urlRouterProvider.otherwise('/tab/dash');
+      $urlRouterProvider.otherwise(function($injector, $location){
+        var $state = $injector.get("$state");
+        $state.go("tab.tournaments");
+      });
 
     }]);

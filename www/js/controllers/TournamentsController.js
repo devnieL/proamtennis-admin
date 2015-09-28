@@ -2,7 +2,14 @@ angular
   .module('proamtennis.controllers')
   .controller('TournamentsController', function($scope, TournamentsService) {
 
-    console.log("FUCKsss");
+
+    $scope.tournaments = [];
+
+    $scope.searchQuery = null;
+
+    TournamentsService.getByCurrentUser().success(function(data){
+        $scope.tournaments = data;
+    }).error(function(error){});
 
     $scope.settings = {
       enableFriends: true

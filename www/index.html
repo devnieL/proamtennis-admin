@@ -20,10 +20,19 @@
     <!-- your app's js -->
 
     <script src="js/proamtennis.js"></script>
+    <script src="js/proamtennis.constants.js"></script>
+
+
+    <script src="js/utils/LocalStorageProvider.js"></script>
+
+    <script src="js/utils/AuthInterceptor.js"></script>
+
+
 
     <script src="js/services/TournamentsService.js"></script>
-    <script src="js/services/LoginService.js"></script>
+    <script src="js/services/AuthService.js"></script>
 
+    <script src="js/controllers/AppController.js"></script>
     <script src="js/controllers/AccountController.js"></script>
     <script src="js/controllers/ChatDetailController.js"></script>
     <script src="js/controllers/ChatsController.js"></script>
@@ -43,7 +52,7 @@
 
 
   </head>
-  <body ng-app="proamtennis">
+  <body ng-app="proamtennis" ng-controller='AppController'>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
