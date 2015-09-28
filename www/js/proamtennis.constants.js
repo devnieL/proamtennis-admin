@@ -2,7 +2,7 @@ angular
 .module('proamtennis.constants')
 .constant('APP_SETTINGS', {
   NAME : 'ProAmTennis Perú 2015',
-  API_URL : 'http://localhost:8000/v1'
+  API_URL : 'http://apiproamtennisperu.mybluemix.net/v1'
 })
 .constant('APP_EVENTS', {
   AUTH : {
