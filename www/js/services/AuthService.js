@@ -6,7 +6,7 @@
 
 angular
   .module('proamtennis.services')
-  .factory('AuthService', function($http, $q, LocalStorage, APP_SETTINGS) {
+  .service('AuthService', function($http, $q, LocalStorage, APP_SETTINGS) {
 
     var user = null;
 
@@ -56,7 +56,6 @@ angular
     };
 
     var loadAuthenticationData = function(){
-      console.log('loadAuthenticationData')
       if(LocalStorage.getObject('user')){
           user = LocalStorage.getObject('user');
       }else{
@@ -69,14 +68,18 @@ angular
       callback();
     };
 
+    // This function will be called each time that this
+    // function is called. It's important because we
+    // load the data storage in the localStorage feature
+    // of the app.
     loadAuthenticationData();
 
     return {
       user : user,
       isAuthenticated : function(){
-        // Check scope of JS vanilla
-        // again. 'user' in the returned object
-        // will save a memory address
+        // Check scope of vanilla JS again.
+        // The variable 'user' in the returned
+        // object will save a memory address.
         if(user == null)
           return false;
         return true;

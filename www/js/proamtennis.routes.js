@@ -7,8 +7,9 @@
     function($stateProvider, $urlRouterProvider, $httpProvider) {
 
       // @devniel
-      // Intercepting $http request to add token authorization header
-      // based on :
+      // Intercepting $http request to add token authorization header to requests
+      // from $http service, remember that with its provider we could config
+      // a service. Based on :
       // https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/
 
       $httpProvider.interceptors.push('AuthInterceptor');

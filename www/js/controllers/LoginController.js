@@ -13,8 +13,6 @@ angular
 
       AuthService.login($scope.data.email, $scope.data.password)
       .success(function(data) {
-        console.log('CHANGE !!');
-
         $state.go('tab.tournaments', {}, {reload:true});
       })
       .error(function(error) {

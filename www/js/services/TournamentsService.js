@@ -39,8 +39,6 @@ angular
 
     };
 
-
-
     // Search Tournaments
 
     var searchTournaments = function(searchFilter, tournaments) {

@@ -1,8 +1,7 @@
 angular
   .module('proamtennis.controllers')
   .controller('TournamentsController', function($scope, TournamentsService) {
-
-
+    
     $scope.tournaments = [];
 
     $scope.searchQuery = null;

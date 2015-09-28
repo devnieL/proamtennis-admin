@@ -45,11 +45,10 @@
     });
 
     // Review : http://devdactic.com/user-auth-angularjs-ionic/
+    // This stateChangeStart will be called each time
+    // that the app change its state with $state.go()
 
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, fromState){
-
-      console.log('stateChangeStart', AuthService.isAuthenticated());
-
       if(!AuthService.isAuthenticated()){
         if(next.name !== 'login'){
           event.preventDefault();

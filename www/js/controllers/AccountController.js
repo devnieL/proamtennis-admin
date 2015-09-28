@@ -6,10 +6,9 @@ angular
   };
 
   $scope.logout = function(){
-
     AuthService.logout(function(){
       $state.go('login');
     });
-
   }
+  
 });
